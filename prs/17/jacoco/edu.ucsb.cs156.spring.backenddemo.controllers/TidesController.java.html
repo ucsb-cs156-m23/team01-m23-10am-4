@@ -31,8 +31,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
     @Operation(summary = &quot;Get high and low tides between two dates at a given NOAA station&quot;, description = &quot;JSON return format documented here: https://api.tidesandcurrents.noaa.gov/api/prod/&quot;)
     @GetMapping(&quot;/get&quot;)
     public ResponseEntity&lt;String&gt; getTides(
-        @Parameter(name=&quot;beginDate&quot;, description=&quot;Date to start range&quot;, example=&quot;12/24/2023&quot;) @RequestParam String beginDate,
-        @Parameter(name=&quot;endDate&quot;, description=&quot;Date to end range&quot;, example=&quot;1/1/2024&quot;) @RequestParam String endDate,
+        @Parameter(name=&quot;beginDate&quot;, description=&quot;Date to start range (yyyyMMdd or MM/dd/yyyy)&quot;, example=&quot;12/24/2023&quot;) @RequestParam String beginDate,
+        @Parameter(name=&quot;endDate&quot;, description=&quot;Date to end range (yyyyMMdd or MM/dd/yyyy)&quot;, example=&quot;01/01/2024&quot;) @RequestParam String endDate,
         @Parameter(name=&quot;station&quot;, description=&quot;NOAA station number&quot;, example=&quot;9411340&quot;) @RequestParam String station
     ) throws JsonProcessingException {
 <span class="fc" id="L38">        log.info(&quot;getTides: beginDate={}, endDate={}, station={}&quot;, beginDate, endDate, station);</span>
