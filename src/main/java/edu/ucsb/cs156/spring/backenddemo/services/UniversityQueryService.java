@@ -1,6 +1,6 @@
 package edu.ucsb.cs156.spring.backenddemo.services;
 
-
+import java.util.Map;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -24,9 +24,11 @@ public class UniversityQueryService {
         restTemplate = restTemplateBuilder.build();
     }
 
-    public static final String ENDPOINT = "";
+    public static final String ENDPOINT = "http://universities.hipolabs.com/search?name={name}";
 
     public String getJSON(String name) throws HttpClientErrorException {
+        log.info("name={}", name);
+        Map<String, String> uriVariables = Map.of("name", name);
        return "";
     }
 }
