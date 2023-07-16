@@ -29,10 +29,10 @@ public class ZipCodeController{
     @Autowired
     ZipCodeQueryService zipCodeQueryService;
 
-    @Operation(summary="Get information about a us zipcode", description ="Zip Code data gathered from http://www.zippopotam.us/")
+    @Operation(summary="Get information about a us zipcode")
     @GetMapping("/get")
     public ResponseEntity<String> getCountryCodes(
-        @Parameter(name="zipcode", example="US zipcode, e.g. 93106") @RequestParam String zipcode
+        @Parameter(name="zipcode", description="US zipcode, e.g. 93106") @RequestParam String zipcode
     ) throws JsonProcessingException {
         log.info("getZipCodeInfo: zipCode={}", zipcode);
         String result = zipCodeQueryService.getJSON(zipcode);
