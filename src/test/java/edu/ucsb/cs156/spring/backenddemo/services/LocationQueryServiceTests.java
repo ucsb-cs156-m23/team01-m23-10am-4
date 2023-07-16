@@ -23,7 +23,7 @@ public class LocationQueryServiceTests {
     @Test
     public void test_getJSON() {
 
-        String location = "Los Angeles";
+        String location = "LAX";
 
         String expectedURL = LocationQueryService.ENDPOINT.replace("{location}", location);
 
