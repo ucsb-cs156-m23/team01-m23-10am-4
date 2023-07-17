@@ -35,7 +35,7 @@ public class PublicHolidaysQueryControllerTests {
         String countryCode = "US";
         String fakeJsonResult = "{ \"fake\" : \"result\" }";
         when(publicHolidayQueryService.getJSON(year, countryCode)).thenReturn(fakeJsonResult);
-        MvcResult response = mockMvc.perform(get("/api/publicholidays/get/get").param("year", year)
+        MvcResult response = mockMvc.perform(get("/api/publicholidays/get").param("year", year)
                 .param("countryCode", countryCode)).andExpect(status().isOk()).andReturn();
         String actualResult = response.getResponse().getContentAsString();
         assertEquals(fakeJsonResult, actualResult);
