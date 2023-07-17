@@ -22,7 +22,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Slf4j
 @RestController
 @RequestMapping("/api/publicholidays/get")
-public class PublicHolidaysController {
+public class PublicHolidaysQueryController {
     ObjectMapper mapper = new ObjectMapper();
 
     @Autowired
