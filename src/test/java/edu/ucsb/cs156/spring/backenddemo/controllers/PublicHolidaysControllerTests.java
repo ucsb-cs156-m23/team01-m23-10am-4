@@ -21,8 +21,8 @@ import static org.mockito.Mockito.times;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@WebMvcTest(value = PublicHolidaysQueryController.class)
-public class PublicHolidaysQueryControllerTests {
+@WebMvcTest(value = PublicHolidaysController.class)
+public class PublicHolidaysControllerTests {
     private ObjectMapper mapper = new ObjectMapper();
     @Autowired
     private MockMvc mockMvc;
